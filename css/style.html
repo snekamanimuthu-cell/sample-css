@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+
+    <style>
+        * {
+            margin: 2;
+            padding: 5;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        p {
+            color: rgb(3, 29, 36);
+        }
+
+        .highlight {
+            background-color: rgb(131, 25, 224);
+        }
+
+        #mainHeading {
+            color: green;
+            text-align: center;
+        }
+          h2 ,h4{
+            color: rgb(112, 44, 11);
+        }
+        h3{
+            color:aqua;
+            background-color: rgb(32, 18, 2);
+        }
+        div p {
+            color: red;
+        }
+     .word-highlight {
+        background-color: rgb(177, 207, 7);
+        color: rgb(200, 24, 24);
+        font-weight: bold;
+     }
+    div section p {
+            color: blue;
+            background-color: lightgray;
+        }
+        input[type="text"],
+        input[type="password"] 
+        {
+            border: 2px solid blue;
+            background-color: #70a9e6;
+}
+        :picture-in-picture {
+        box-shadow: 0 0 0 8px red;
+}
+        .sale-image {
+        width: 300px;
+        border: 3px solid black;
+        margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[readonly],
+    textarea {
+    width: 300px;       
+    padding: 8px;
+    border: 2px solid blue;
+    background-color: #70a9e6;
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #333;
+    font-size: 14px;
+}
+
+        .text-color { color: #f7135f; }
+        .font-family { font-family: 'Courier New', Courier, monospace; }
+        .font-size { font-size: 24px; }
+        .font-weight { font-weight: bold; }
+        .line-height { line-height: 2; }
+        .text-align { text-align: center; }
+        .text-decoration { text-decoration: underline; }
+        .letter-spacing { letter-spacing: 5px; }
+        .word-spacing { word-spacing: 20px; }
+.page-bg
+         {
+    background-color: rgb(79, 210, 233);                   
+    background-size: cover;                        
+    background-repeat: no-repeat;                  
+    background-position: center;                                                  
+    height: 100vh;                                
+    padding: 40px;
+}
+.block-box {
+    display: block;
+    background-color: lightcoral;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.inline-box {
+    display: inline;
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.inline-block-box {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: lightskyblue;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+}
+.flex-container {
+    display: flex;
+    gap: 10px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.flex-item {
+    background-color: orange;
+    padding: 20px;
+}
+
+.relative-box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background-color: violet;
+    padding: 10px;
+}
+
+.absolute-container {
+    position: relative;
+    height: 120px;
+    background-color: #ddd;
+}
+
+.absolute-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+.fixed-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.z-container {
+    position: relative;
+    height: 100px;
+}
+
+.z1 {
+    position: absolute;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+.z2 {
+    position: absolute;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    left: 40px;
+    top: 40px;
+    z-index: 2;
+}
+
+.overflow-box {
+    width: 200px;
+    height: 80px;
+    border: 2px solid black;
+    overflow: auto;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-around;   
+    align-items: center;             
+    flex-direction: row;            
+    flex-wrap: wrap;                
+    background-color: #f0e68c;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.flex-item {
+    width: 120px;
+    height: 80px;
+    background-color: #4682b4;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    font-weight: bold;
+    margin: 10px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-template-rows: auto auto;           
+    gap: 15px;
+    background-color: #e6e6fa;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background-color: #6a5acd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.box-model-demo {
+    width: 300px;                
+    padding: 20px;                
+    border: 4px solid darkblue;   
+    margin: 30px auto;           
+    background-color: #ffffff;
+    text-align: center;
+}
+
+</style>
+</head>
+<body class="page-bg">
+
+
+    <h1 id="mainHeading">CSS Selectors</h1>
+    <h3>*Element Selector</h3>
+    <h3>*Id selector</h3>
+    <h3>*Class selector</h3>
+    <h3>*Grouping selector</h3>
+    <h3>*universal selector</h3>
+    
+    <p><span class="word-highlight">Black Friday</span> is a major shopping event that takes place annually, usually on the day after Thanksgiving, and is known for offering significant discounts and special deals across various products such as electronics, clothing, home appliances, and accessories. Retailers provide both online and in-store offers to attract a large number of customers, making it one of the busiest shopping days of the year. Due to heavy demand, many brands extend these discounts for several days, calling it a “Black Friday Sale,” which benefits consumers by allowing them to purchase products at reduced prices.</p>
+    <h2>Group Selector Example</h2>
+    <h5>Sample for css</h5>
+    <h4>superbotics is a leading ecommerce company in the virudhunagar</h4>
+     <div>
+        <p>This paragraph is inside a div .</p>
+        <section>
+            <p>This paragraph uses a nested selector.</p>
+        </section>
+    </div>
+     <input type="text" placeholder="Enter your name">
+    <br><br>
+    <input type="password" placeholder="Enter password">
+    <h2>Readonly Input Example</h2>
+    <input type="text" value="Enjoy the black friday deals buy presenting for lovedone" readonly class="sale-image">
+    <h2>Image Example</h2>
+    <img src="shopping.jpg" alt="Black Friday Sale" class="sale-image">
+    <h2>Read-Write Input Example</h2>
+    <input type="text" placeholder="Enter your name">
+    <textarea placeholder="Write your message here"></textarea>
+    <h1 id="mainHeading">PROPERTIES</h1>
+
+<p class="text-color">This text uses color property.</p>
+<p class="font-family">This paragraph uses font-family property.</p>
+<p class="font-size">This paragraph uses font-size property.</p>
+<p class="font-weight">This paragraph uses font-weight property.</p>
+<p class="line-height">This paragraph uses line-height property. Each line has more space.</p>
+<p class="text-align">This paragraph uses text-align property (centered).</p>
+<p class="text-decoration">This paragraph uses text-decoration property (underlined).</p>
+<p class="letter-spacing">This paragraph uses letter-spacing property.</p>
+<p class="word-spacing">This paragraph uses word-spacing property.</p>
+<h1 id="mainHeading">LAYOUT & POSITIONING</h1>
+
+<h3>Display Property</h3>
+<div class="block-box">Block Element</div>
+
+<span class="inline-box">Inline 1</span>
+<span class="inline-box">Inline 2</span>
+
+<div class="inline-block-box">Box 1</div>
+<div class="inline-block-box">Box 2</div>
+
+<h3>Flex Layout</h3>
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+</div>
+
+<h3>Position: Relative</h3>
+<div class="relative-box">Relative Box</div>
+
+<h3>Position: Absolute</h3>
+<div class="absolute-container">
+    <div class="absolute-box">Absolute Box</div>
+</div>
+
+<h3>Z-index</h3>
+<div class="z-container">
+    <div class="z1"></div>
+    <div class="z2"></div>
+</div>
+<br><br>
+<h3>Overflow</h3>
+<div class="overflow-box">major shopping event that takes place annually, usually on the day after Thanksgiving, and is known for offering significant discounts and special deals across various products such as electronics, clothing, home appliances, and accessories. Retailers provide both online and in-store offers to attract a large number of customers, making it one of the busiest shopping days of the year. Due to heavy demand, many brands extend these discounts for several days, calling it a “Black Friday Sale,” which benefits consumers by allowing them to purchase products at reduced prices.</p>
+</div>
+<div class="fixed-box">Fixed</div>
+<h1 id="mainHeading">LAYOUT PROPERTIES</h1>
+<h2>Grid Example</h2>
+    <div class="grid-container">
+    <div class="grid-item">Grid 1</div>
+    <div class="grid-item">Grid 2</div>
+    <div class="grid-item">Grid 3</div>
+    <h1 id="mainHeading">CSS BOX MODEL</h1>
+
+<div class="box-model-demo">
+    usually on the day after Thanksgiving, and is known for offering significant discounts and special deals across various products such as electronics, clothing, home appliances, and accessories. Retailers provide both online and in-store offers to attract a large number of customers, making it one of the busiest shopping days of the year. Due to heavy demand, many brands extend these discounts for several days, calling it a “Black Friday Sale,” which benefits consumers by allowing them to purchase products at reduced prices.</p>
+</div>
+</div>
+</body>
+</html>
